@@ -1,0 +1,1126 @@
+// Import Mixins and variables
+@import "variables";
+@import "mixin";
+
+// Delete default settings
+*{
+    margin: $zero;
+    padding: $zero;
+    box-sizing: border-box;
+}
+//Pree Loader
+#preeLoader{
+    @include size(100%, 100vh);
+    background: black url(IMG/Preloader.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    position: fixed;
+    z-index: 100;
+    animation-duration: 20s;
+}
+#message{
+    @include size(60px, 60px);
+    border-radius: 50%;
+    background-color: #00A0F0;
+    @include flexCenter();
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 90;
+    cursor: pointer;
+}
+//Section one style
+
+#firstContainer{
+    @include size(100%, 887px);
+    @include flexCenter();
+    position: relative;
+    @media screen and (max-width:1140px) {
+        height: 687px;
+    }
+    @media screen and (max-width:880px) {
+        @include flDownCenter();
+        flex-direction: column-reverse;
+        height: 1000px;
+    }
+    header{
+        @include size(100%, 74px);
+        @include flexCenter();
+        position: absolute;
+        top: 0px;
+        transition: all .2s ease-in;
+        z-index: 999;
+        @media screen and (max-width:580px) {
+            height: 80px;
+        }
+        #headerInside{
+            @include size(1108px, 54px);
+            @include flexBetween();
+            @media screen and (max-width:580px) {
+                height: 70px;
+                @include flDownAround();
+            }
+            #headerLogo{
+                @include size(55px, 44px);
+                @include flexCenter();
+                cursor: pointer;
+                @media screen and (max-width:580px) {
+                    @include size(45px, 35px)
+                }
+                img{
+                    @include size(100%,100%);
+                    object-fit: cover;
+                    object-position: center;
+                    
+                }
+            }
+        }
+        nav{
+            @include size(497.3px, 34.2px);
+            @include flexCenter();
+            @media screen and (max-width:500px) {
+                width: 325px;
+            }
+            ul{
+                @include size(100%, 34.2px);
+                @include flexAround();
+                li{
+                    font-size: 14px;
+                    font-family: $fontPop;
+                    color: $gray;
+                    list-style: none;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    a{
+                        font-size: 14px;
+                        font-family: $fontPop;
+                        color: inherit;
+                        list-style: none;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        text-decoration: none;
+                        @media screen and (max-width:500px) {
+                            font-size: 13px;
+                        }
+                    }
+                }
+                .active{
+                    color: $orange;
+                }
+                li:hover{
+                    color: $orange;
+                }
+            }
+        }
+    }
+    header.sticky{
+        position: fixed;
+        height: 84px;
+        background-color: $bgDark;
+    }
+    #firstLeft{
+        @include size (50%, 100%);
+        background-color: $black;
+        @include flDownCenter();
+        @media screen and (max-width:880px) {
+            @include size (100%, 40%);
+        }
+        h2{
+            font-size: 42px;
+            color: $white;
+            font-weight: bold;
+            font-family: $fontRub;
+            margin-bottom: 30px;
+        }
+        h1{
+            font-size: 64px;
+            font-weight: bold;
+            color: $orange;
+            font-family: $fontRub;
+            margin-bottom: 30px;
+            span:nth-child(1){
+                color: $white;
+            }
+            @media screen and (max-width:1480px) {
+                font-size: 58px;
+            }
+            @media screen and (max-width:1380px) {
+                font-size: 50px;
+            }
+            @media screen and (max-width:1140px) {
+                font-size: 40px;
+            }
+            @media screen and (max-width:465px) {
+                font-size: 28px;
+            }
+        }
+        button{
+            @include size(159.617px, 44.2px);
+            background: linear-gradient(to bottom, transparent 50%, $orange 50%);
+            background-size: 100% 200%;
+            background-position: 0% 0%;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+            background-color:$white;
+            outline: none;
+            text-transform: uppercase;
+            color: $black;
+            font-size: 14px;
+            font-family: $fontPop;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all ease-out .2s;
+            margin-bottom: 50px;
+        }
+        button:hover{
+            background-position: 0% 100%;
+            color: $white;
+        }
+        #socialsPlace{
+            @include size(210px, 30px);
+            @include flexBetween();
+            i{
+                @include size(30px, 30px);
+                border: 1px solid $white;
+                text-align: center;
+                line-height: 30px;
+                font-size: 14px;
+                color: $white;
+                cursor: pointer;
+                transition: all .2s;
+            }
+            i:hover{
+                background-color: $orange;
+                border-color: $orange;
+                color: $white;
+            }
+        }
+    }
+    #firstRight{
+        @include size(50%, 100%);
+        background: url(IMG/mainpic.png);
+        background-position: center;
+        background-size: cover;
+        @media screen and (max-width:880px) {
+            @include size (100%, 60%);
+            background-position: top;
+        }
+    }
+} // First section style end
+
+//Section two style
+#sectionTwo{
+    @include size(100%, 878.6px);
+    @include flexCenter();
+    background-color: $bgLight;
+    @media screen and (max-width:880px) {
+        height: 1300px;
+    }
+    @media screen and (max-width:480px) {
+        height: 1350px;
+    }
+    #twoMain{
+        max-width: 1140px;
+        @include size(100%, 738.6px);
+        @include flDownBetween();
+        @media screen and (max-width:880px) {
+            height: 1200px;
+        }
+        @media screen and (max-width:480px) {
+            height: 1250px;
+        }
+        #twoMainInfo{
+            @include size(100%, 445px);
+            @include flexBetween();
+            align-items: flex-start;
+            @media screen and (max-width:880px) {
+                height: 800px;
+                @include flDownAround();
+            }
+            #twoMainInfoPic{
+                @include size(445px, 445px);
+                @include flexCenter();
+                @media screen and (max-width:980px) {
+                    width: 345px;
+                    height: 345px;
+                }
+                img{
+                    @include size(100%, auto);
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+            #twoMainInfoText{
+                @include size(585px, 412.5px);
+                @include flDownBetween();
+                align-items: flex-start;
+                @media screen and (max-width:1140px) {
+                    width: 485px;
+                }
+                @media screen and (max-width:880px) {
+                    height: 345px;
+                }
+                @media screen and (max-width:880px) {
+                    align-items: center;
+                }
+                @media screen and (max-width:480px) {
+                    width: 325px;
+                    height: 400px;
+                }
+                #twoMainInfoHeader{
+                    @include size(100%, 38.4px);
+                    @include flexCenter();
+                    justify-content: flex-start;
+                    @media screen and (max-width:880px) {
+                        justify-content: center;
+                    }
+                    p{
+                        font-size: 32px;
+                        font-weight: 800;
+                        color: $orange;
+                        font-family: $fontRub;
+                        line-height: 38.4px;
+                        text-transform: capitalize;
+                        @media screen and (max-width:880px) {
+                            font-size: 26px;
+                        }
+                        @media screen and (max-width:880px) {
+                            text-align: center;
+                        }
+                    }
+                }
+                #twoMainInfoTitle{
+                    @include size(100%, 56.8px);
+                    @include flDownBetween();
+                    align-items: flex-start;
+                    @media screen and (max-width:880px) {
+                        align-items: center;
+                    }
+                    p:nth-child(1){
+                        font-size: 25px;
+                        color: $white;
+                        text-transform: capitalize;
+                        font-family: $fontRub;
+                        @media screen and (max-width:880px) {
+                            font-size: 20px;
+                        }
+                        @media screen and (max-width:880px) {
+                            text-align: center;
+                        }
+                    }
+                    p:nth-child(2){
+                        font-size: 14px;
+                        color: $gray;
+                        letter-spacing: 4px;
+                        font-family: $fontRub;
+                        text-transform: uppercase;
+                        @media screen and (max-width:880px) {
+                            font-size: 12px;
+                        }
+                        @media screen and (max-width:880px) {
+                            text-align: center;
+                        }
+                    }
+                }
+                p{
+                    color: hsla(0deg, 0%, 100%, 0.5);
+                    font-size: 15px;
+                    font-family: $fontPop;
+                    font-weight: 300;
+                    line-height: 1.8;
+                    @media screen and (max-width:880px) {
+                        font-size: 13px;
+                    }
+                    @media screen and (max-width:880px) {
+                        text-align: center;
+                    }
+                }
+                #twoMainInfoButtons{
+                    @include size(299.484px, 44.2px);
+                    @include flexBetween();
+                    button:nth-child(1){
+                        @include size(159.617px, 44.2px);
+                        background: linear-gradient(to bottom, transparent 50%, $orange 50%);
+                        background-size: 100% 200%;
+                        background-position: 0% 0%;
+                        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+                        background-color:$white;
+                        outline: none;
+                        text-transform: uppercase;
+                        color: $black;
+                        font-size: 14px;
+                        font-family: $fontPop;
+                        border: none;
+                        border-radius: 3px;
+                        cursor: pointer;
+                        font-weight: 500;
+                        transition: all ease-out .2s;
+                        &:hover{
+                            background-position: 0% 100%;
+                            color: $white;
+                        }
+                    }
+                    button:nth-child(2){
+                        @include size(115.067px, 44.2px);
+                        border: 1px solid $orange;
+                        border-radius: 3px;
+                        background: linear-gradient(to bottom, transparent 50%, $orange 50%);
+                        background-position: 0% 0%;
+                        background-size: 100% 200%;
+                        background-color: transparent;
+                        text-transform: uppercase;
+                        font-size: 14px;
+                        color: $gray;
+                        cursor: pointer;
+                        font-weight: 500;
+                        transition: all ease-out .2s;
+                        font-family: $fontPop;
+                        &:hover{
+                            color: $white;
+                            background-position: 0 100%;
+                        }
+                    }
+                }
+            }
+        }
+        #twoMainSkills{
+            @include size(1110px, 193.6px);
+            @include flexBetween();
+            align-items: flex-end;
+            @media screen and (max-width:1140px) {
+                width: 900px;
+            }
+            @media screen and (max-width:880px) {
+                width: 450px;
+                height: 400px;
+            }
+            @media screen and (max-width:480px) {
+                width: 325px;
+            }
+            #twoMainSkillsHeader{
+                @include size(28.8px, 100%);
+                position: relative;
+                p{
+                    @include size(28.8px,94.667px);
+                    text-transform: capitalize;
+                    writing-mode: vertical-rl;
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: $orange;
+                    font-family: $fontRub;
+                    &::after{
+                        content: "";
+                        width: 1px;
+                        height: 80px;
+                        background-color: $orange;
+                        display:inline-block;
+                        position: absolute;
+                        bottom: 10px;
+                        right: 15px;
+                    }
+                }
+            }
+            #twoMainSkillsPercents{
+                @include size(1060px, 100%);
+                @include flexBetween();
+                align-items: flex-start;
+                align-content: space-between;
+                flex-wrap: wrap;
+                @media screen and (max-width:1140px) {
+                    width: 860px;
+                }
+                @media screen and (max-width:880px) {
+                    width: 400px;
+                }
+                @media screen and (max-width:480px) {
+                    width: 280px;
+                }
+                #twoMainSkillsPercentsDivBig{
+                    @include size(490px, 36.8px);
+                    @include flDownBetween();
+                    @media screen and (max-width:1140px) {
+                        width: 400px;
+                    }
+                    @media screen and (max-width:480px) {
+                        width: 280px;
+                    }
+                    #twoMainSkillsPercentsDivBigHeader{
+                        @include size(100%, 16.8px);
+                        @include flexCenter();
+                        justify-content: flex-start;
+                        h3{
+                            text-transform: uppercase;
+                            font-size: 14px;
+                            color: $gray;
+                            font-family: $fontRub;
+                            font-weight: 500;
+                        }
+                    }
+                    #twoMainSkillsPercentsDivBigProgress{
+                        @include size(100%, 5px);
+                        background-color: $black;
+                        border-radius: 3px;
+                        position: relative;
+                        span{
+                            position: absolute;
+                            right: 0;
+                            top: -20px;
+                            font-size: .75rem;
+                            font-weight: bold;
+                            font-family: $fontPop;
+                            color: $gray;
+                            // animation: spanLoad 2s;
+                        }
+                        @keyframes spanLoad {
+                            0%{
+                                right: 490px;
+                            }
+                            100%{
+                                right: 0;
+                            }
+                        }
+                        #twoMainSkillsPercentsDivBigLine1{
+                            height: 100%;
+                            border-radius: 3px;
+                            background-color: $orange;
+                        }
+                        @keyframes loading {
+                            0%{
+                                width: 0%;
+                            }
+                            100%{
+                                width: 95%;
+                            }
+                        }
+                        #twoMainSkillsPercentsDivBigLine2{
+                            height: 100%;
+                            border-radius: 3px;
+                            background-color: $orange;
+                        }
+                        @keyframes loading2 {
+                            0%{
+                                width: 0%;
+                            }
+                            100%{
+                                width: 95%;
+                            }
+                        }
+                        #twoMainSkillsPercentsDivBigLine3{
+                            height: 100%;
+                            border-radius: 3px;
+                            background-color: $orange;
+                        }
+                        @keyframes loading3 {
+                            0%{
+                                width: 0%;
+                            }
+                            100%{
+                                width: 80%;
+                            }
+                        }
+                        #twoMainSkillsPercentsDivBigLine4{
+                            height: 100%;
+                            border-radius: 3px;
+                            background-color: $orange;
+                        }
+                        @keyframes loading4 {
+                            0%{
+                                width: 0%;
+                            }
+                            100%{
+                                width: 70%;
+                            }
+                        }
+                        #twoMainSkillsPercentsDivBigLine5{
+                            height: 100%;
+                            border-radius: 3px;
+                            background-color: $orange;
+                        }
+                        @keyframes loading5 {
+                            0%{
+                                width: 0%;
+                            }
+                            100%{
+                                width: 95%;
+                            }
+                        }
+                        #twoMainSkillsPercentsDivBigLine6{
+                            height: 100%;
+                            border-radius: 3px;
+                            background-color: $orange;
+                        }
+                        @keyframes loading6 {
+                            0%{
+                                width: 0%;
+                            }
+                            100%{
+                                width: 60%;
+                            }
+                        }
+                        #twoMainSkillsPercentsDivBigLine7{
+                            height: 100%;
+                            border-radius: 3px;
+                            background-color: $orange;
+                        }
+                        @keyframes loading7 {
+                            0%{
+                                width: 0%;
+                            }
+                            100%{
+                                width: 60%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+} // Section two style end
+
+//Section Here me
+
+#hereMe{
+    @include size(100%, 100vh);
+    background-color: rgba(0, 0, 0, 0.7);
+    @include flexCenter();
+    position: fixed;
+    z-index: 999;
+    display: none;
+    #hereMain{
+        @include size(325px, 100px);
+        border: 2px solid $orange;
+        @include flDownEvenly();
+        align-items: flex-start;
+        padding-left: 15px;
+        border-radius: 15px;
+        background-color: $bgLight;
+        p{
+            color: $white;
+            font-family: $fontPop;
+            font-size: 16px;
+            a{
+                color: $orange
+            }
+        }
+    }
+}
+//Section three style start
+#sectionThree{
+    @include size(100%, 1151.6px);
+    @include flexCenter();
+    background-color: $bgDark;
+    @media screen and (max-width:1140px) {
+        height: 870px;
+    }
+    @media screen and (max-width:580px) {
+        height: 1500px;
+    }
+    #threeMain{
+        @include size(1110px, 1011.6px);
+        @include flDownBetween();
+        @media screen and (max-width:1140px) {
+            width: 900px;
+            height: 770px;
+        }
+        @media screen and (max-width:580px) {
+            height: 1400px;
+        }
+        #threeMainHeader{
+            @include size(100%, 38.4px);
+            @include flexCenter();
+            h3{
+                font-size: 32px;
+                font-weight: 800;
+                color: #F0A500;
+                padding-bottom: 15px;
+                font-family: $fontRub;
+                text-transform: capitalize;
+                @media screen and (max-width:365px) {
+                    font-size: 28px;
+                }
+              }
+        }
+        #threeMainSelect{
+            @include size(247.2833px, 18.2px);
+            @include flexBetween();
+            li{
+                list-style: none;
+                font-size: 14px;
+                font-weight: 700;
+                color: $gray;
+                text-transform: capitalize;
+                font-family: $fontRub;
+                cursor: pointer;
+                &:hover{
+                    color: $orange;
+                }
+            }
+            #active{
+                color: $orange;
+            }
+        }
+        #threeMainPortfolio{
+            @include size(100%, 830px);
+            @include flDownBetween();
+            flex-wrap: wrap;
+            align-content: space-around;
+            justify-content: flex-start;
+            @media screen and (max-width:1140px) {
+                height: 630px;
+            }
+            @media screen and (max-width:880px) {
+                height: 630px;
+            }
+            @media screen and (max-width:580px) {
+                height: 1260px;
+            }
+            #threeMainPortfolioBig{
+                @include size(350px, 500px);
+                border-radius: 8px;
+                @include flexCenter();
+                cursor: pointer;
+                @media screen and (max-width:1140px) {
+                    @include size (250px, 400px);
+                }
+                @media screen and (max-width:880px) {
+                    @include size(250px, 200px)
+                }
+                #threeMainPortfolioDivs{
+                    @include size(330px, 480px);
+                    background-color: rgba(9, 9, 9, 0.8);
+                    transition: all 0.4s ease;
+                    padding: 10px;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                    animation-duration: .4s;
+                    display: none;
+                    @media screen and (max-width:1140px) {
+                        @include size (230px, 380px);
+                    }
+                    @media screen and (max-width:880px) {
+                        @include size(230px, 180px)
+                    }
+                }
+                &:hover #threeMainPortfolioDivs{
+                    display: flex;
+                }
+            }
+            #threeMainPortfolioSmall{
+                @include size(350px, 300px);
+                border-radius: 8px;
+                @include flexCenter();
+                cursor: pointer;
+                @media screen and (max-width:1140px) {
+                    @include size (250px, 180px);
+                }
+                #threeMainPortfolioDivs{
+                    @include size(330px, 280px);
+                    background-color: rgba(9, 9, 9, 0.8);
+                    transition: all 0.4s ease;
+                    padding: 10px;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                    animation-duration: .4s;
+                    display: none;
+                    @media screen and (max-width:1140px) {
+                        @include size (230px, 160px);
+                    }
+                    @media screen and (max-width:880px) {
+                        @include size(230px, 180px)
+                    }
+                }
+                &:hover #threeMainPortfolioDivs{
+                    display: flex;
+                }
+            }
+            #threeMainPortfolioBig:nth-child(1){
+                background: url(IMG/tetris.png);
+                background-position: right;
+                background-size: cover;
+                margin: 7.5px 0px;
+            }
+            #threeMainPortfolioBig:nth-child(4){
+                background: url(IMG/windows.png);
+                background-position: center;
+                background-size: cover;
+                margin: 7.5px 0px;
+            }
+            #threeMainPortfolioBig:nth-child(5){
+                background: url(IMG/todolist.png);
+                background-position: center;
+                background-size: cover;
+                margin: 7.5px 0px;
+            }
+            #threeMainPortfolioSmall:nth-child(2){
+                background: url(IMG/akal.png);
+                background-position: center;
+                background-size: cover;
+                margin: 7.5px 0px;
+            }
+            #threeMainPortfolioSmall:nth-child(3){
+                background: url(IMG/TicTactoe.png);
+                background-position: center;
+                background-size: cover;
+                margin: 7.5px 0px;
+            }
+            #threeMainPortfolioSmall:nth-child(6){
+                background: url(IMG/registr.png);
+                background-position: center;
+                background-size: cover;
+                margin: 7.5px 0px;
+            }
+        }
+        #threeMainPortfolioDivsText{
+            @include size(310px, 70.4px);
+            @include flDownBetween();
+            #textUp{
+                @include size(100%, 15.4px);
+                h3{
+                    color: $white;
+                    font-size: 14px;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    font-family: $fontPop;
+                    @media screen and (max-width:1140px) {
+                        font-size: 12px;
+                    }
+                }
+            }
+            #textDown{
+                @include size(100%, 40px);
+                @include flexBetween();
+                h2{
+                    font-size: 18px;
+                    color: $orange;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-family: $fontRub;
+                    animation-duration: 1.5s;
+                    @media screen and (max-width:1140px) {
+                        font-size: 14px;
+                    }
+                }
+                button{
+                    @include size(40px, 40px);
+                    background-color: transparent;
+                    border-radius: 50%;
+                    border: 1px solid $white;
+                    color: $white;
+                    font-size: 24px;
+                    line-height: 0px;
+                    text-align: center;
+                    font-weight: lighter;
+                    cursor: pointer;
+                    transition: all .2s ease;
+                    &:hover{
+                        background-color: $white;
+                        color: $orange;
+                    }
+                    @media screen and (max-width:1140px) {
+                        @include size(25px, 25px);
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+} // Section three style end
+
+//Section four style start
+#sectionFour{
+    @include size(100%, 1018.1px);
+    background-color: $bgLight;
+    @include flexCenter();
+    @media screen and (max-width:1140px) {
+        height: 1100px;
+    }
+    @media screen and (max-width:880px) {
+        height: 2050px;
+    }
+    #fourMain{
+        @include size(1110px, 878.1px);
+        @include flDownBetween();
+        @media screen and (max-width:1140px) {
+            width: 1000px;
+            height: 1000px;
+        }
+        @media screen and (max-width:880px) {
+            height: 1950px;
+        }
+        #fourMainHead{
+            @include size(100%, 53.4px);
+            @include flexCenter();
+            h3{
+                font-size: 32px;
+                color: $orange;
+                font-weight: 800;
+                font-family: $fontRub;
+                text-transform: capitalize;
+                @media screen and (max-width:365px) {
+                    font-size: 28px;
+                }
+            }
+        }
+        #fourMainRow{
+            @include size(100%, 794.7px);
+            @include flexBetween();
+            @media screen and (max-width:1140px) {
+                max-width: 900px;
+                height: 900px;
+            }
+            @media screen and (max-width:880px) {
+                height: 1850px;
+                @include flDownBetween();
+            }
+            #fourMainRowEduc{
+                @include size(540px, 793.1px);
+                @include flDownBetween();
+                @media screen and (max-width:1140px) {
+                    width: 400px;
+                    height: 900px;
+                }
+                @media screen and (max-width:460px) {
+                    width: 325px;
+                }
+                #fourMainRowEducHead{
+                    @include size(100%, 31.2px);
+                    @include flexCenter();
+                    i{
+                        color: $orange;
+                        font-size: 32px;
+                        font-weight: 900;
+                    }
+                    h3{
+                        color: $white;
+                        font-size: 26px;
+                        font-weight: 600;
+                        font-family: $fontRub;
+                        text-transform: capitalize;
+                        margin-left: 20px;
+                    }
+                }
+                #fourMainRowEducDivs{
+                    @include size(100%, 216px);
+                    @include flDownBetween();
+                    align-items: flex-start;
+                    background-color: $bgDark;
+                    border: 1px solid $bgDark;
+                    padding: 30px;
+                    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    &:hover{
+                        border-color: $orange;
+                    }
+                    &:hover span:nth-child(4){
+                        color: $orange;
+                    }
+                    @media screen and (max-width:1140px) {
+                        height: 250px;
+                    }
+                }
+            }
+            #fourMainRowExper{
+                @include size(540px, 793.1px);
+                @include flDownBetween();
+                @media screen and (max-width:1140px) {
+                    width: 400px;
+                    height: 900px;
+                }
+                @media screen and (max-width:460px) {
+                    width: 325px;
+                }
+                #fourMainRowExperHead{
+                    @include size(100%, 31.2px);
+                    @include flexCenter();
+                    i{
+                        color: $orange;
+                        font-size: 32px;
+                        font-weight: 900;
+                    }
+                    h3{
+                        color: $white;
+                        font-size: 26px;
+                        font-weight: 600;
+                        font-family: $fontRub;
+                        text-transform: capitalize;
+                        margin-left: 20px;
+                    }
+                }
+                #fourMainRowExperDivs{
+                    @include size(100%, 216px);
+                    @include flDownBetween();
+                    align-items: flex-start;
+                    background-color: $bgDark;
+                    border: 1px solid $bgDark;
+                    padding: 30px;
+                    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    &:hover{
+                        border-color: $orange;
+                    }
+                    &:hover span:nth-child(4){
+                        color: $orange;
+                    }
+                    @media screen and (max-width:1140px) {
+                        height: 250px;
+                    }
+                }
+            }
+            span{
+                font-size: 14px;
+                font-weight: 400;
+                text-transform: capitalize;
+                color: $white;
+                font-family: $fontPop;
+            }
+            h5{
+                font-family: $fontRub;
+                font-weight: bold;
+                color: $orange;
+                font-size: 18px;
+                text-transform: capitalize;
+            }
+            p{
+                font-size: 15px;
+                color: $gray;
+                font-weight: 300;
+                font-family: $fontPop;
+            }
+            span:nth-child(4){
+                font-size: 12px;
+                transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+        }
+    }
+} //Section four style end
+
+//Section six style
+#sectionSix{
+    @include size(100%, 603px);
+    @include flexCenter();
+    background-color: $bgDark;
+    #sixMain{
+        @include size(1110px, 463px);
+        @include flDownBetween();
+        @media screen and (max-width:460px) {
+            width: 325px;
+        }
+        #sixMainHead{
+            @include size(100%, 38.4px);
+            @include flexCenter();
+            h3{
+                font-size: 32px;
+                color: $orange;
+                font-weight: 800;
+                font-family: $fontRub;
+                text-transform: capitalize;
+                @media screen and (max-width:365px) {
+                    font-size: 28px;
+                }
+            }
+        }
+        #sixMainBottom{
+            @include size(100%, 379.6px);
+            @include flexCenter();
+            #sixMainBottomRight{
+                @include size(445px, 379.6px);
+                @include flDownBetween();
+                p{
+                    font-size: 15px;
+                    font-weight: 300;
+                    line-height: 1.8;
+                    text-transform: capitalize;
+                    color: $white;
+                    font-family: $fontPop;
+                    text-align: center;
+                }
+                #sixMainBottomRightItems{
+                    @include size(320px, 248.8px);
+                    @include flDownCenter();
+                    #sixMainBottomRightItemsDIv{
+                        @include size(100%, 62.2px);
+                        @include flexCenter();
+                        justify-content: flex-start;
+                        #sixMainBottomRightItemsDIvIcon{
+                            @include size(65px, 62.2px);
+                            @include flexCenter();
+                            padding-right: 13px;
+                            padding-top: 5px;
+                            border-right: 1px solid $orange;
+                            i{
+                                font-size: 40px;
+                                color: $orange;
+                            }
+                        }
+                        #sixMainBottomRightItemsDIvText{
+                            @include size(220.45px,30px);
+                            @include flDownBetween();
+                            align-items: flex-start;
+                            padding-left: 25px;
+                            h5{
+                                font-size: 16px;
+                                font-weight: 500;
+                                color: $gray;
+                                font-family: $fontRub;
+                                text-transform: capitalize;
+                            }
+                            p{
+                                font-size: 15px;
+                                color: $white;
+                                text-transform: capitalize;
+                                font-family: $fontPop;
+                                text-transform: capitalize;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+} //Section six style end
+
+// Footer style start
+footer{
+    @include size(100%, 189px);
+    @include flexCenter();
+    background-color: $bgLight;
+    #footMain{
+        @include size(1110px, 73px);
+        @include flDownBetween();
+        #footerUl{
+            @include size(230px, 30px);
+            @include flexBetween();
+            li{
+                @include size(30px, 30px);
+                border-radius: 50%;
+                @include flexCenter();
+                list-style: none;
+                cursor: pointer;
+                font-size: 14px;
+                color: $white;
+                transition: all 0.2s;
+                &:hover{
+                    background-color: $orange;
+                }
+                a{
+                    @include size(30px, 30px);
+                    text-align: center;
+                    line-height: 30px;
+                    color: inherit;
+                    text-decoration: none;
+                }
+            }
+        }
+        p{
+            font-size: 15px;
+            font-weight: 300;
+            color: $white;
+            text-transform: capitalize;
+            font-family: $fontPop;
+        }
+    }
+}
