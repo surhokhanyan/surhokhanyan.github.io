@@ -694,6 +694,11 @@
   }
 }
 
+#sectionTwo #twoMain #twoMainInfo #twoMainInfoText p a {
+  color: inherit !important;
+  text-decoration: underline !important;
+}
+
 #sectionTwo #twoMain #twoMainInfo #twoMainInfoText #twoMainInfoButtons {
   width: 299.484px;
   height: 44.2px;
@@ -1064,7 +1069,7 @@
     width: 0%;
   }
   100% {
-    width: 95%;
+    width: 80%;
   }
 }
 
@@ -1073,7 +1078,7 @@
     width: 0%;
   }
   100% {
-    width: 95%;
+    width: 80%;
   }
 }
 
@@ -1088,7 +1093,7 @@
     width: 0%;
   }
   100% {
-    width: 60%;
+    width: 80%;
   }
 }
 
@@ -1097,7 +1102,7 @@
     width: 0%;
   }
   100% {
-    width: 60%;
+    width: 80%;
   }
 }
 
@@ -1112,11 +1117,35 @@
     width: 0%;
   }
   100% {
-    width: 60%;
+    width: 95%;
   }
 }
 
 @keyframes loading7 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 95%;
+  }
+}
+
+#sectionTwo #twoMain #twoMainSkills #twoMainSkillsPercents #twoMainSkillsPercentsDivBig #twoMainSkillsPercentsDivBigProgress #twoMainSkillsPercentsDivBigLine8 {
+  height: 100%;
+  border-radius: 3px;
+  background-color: #F0A500;
+}
+
+@-webkit-keyframes loading8 {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 60%;
+  }
+}
+
+@keyframes loading8 {
   0% {
     width: 0%;
   }
@@ -1490,14 +1519,14 @@
 }
 
 #sectionThree #threeMain #threeMainPortfolio #threeMainPortfolioBig:nth-child(5) {
-  background: url(IMG/todolist.png);
+  background: url(IMG/infinite.png);
   background-position: center;
   background-size: cover;
   margin: 7.5px 0px;
 }
 
 #sectionThree #threeMain #threeMainPortfolio #threeMainPortfolioSmall:nth-child(2) {
-  background: url(IMG/akal.png);
+  background: url(IMG/shop.png);
   background-position: center;
   background-size: cover;
   margin: 7.5px 0px;
@@ -1511,7 +1540,7 @@
 }
 
 #sectionThree #threeMain #threeMainPortfolio #threeMainPortfolioSmall:nth-child(6) {
-  background: url(IMG/registr.png);
+  background: url(IMG/creativ.jpg);
   background-position: center;
   background-size: cover;
   margin: 7.5px 0px;

@@ -336,6 +336,10 @@
                     @media screen and (max-width:880px) {
                         text-align: center;
                     }
+                    a{
+                        color: inherit !important;
+                        text-decoration: underline !important;
+                    }
                 }
                 #twoMainInfoButtons{
                     @include size(299.484px, 44.2px);
@@ -543,7 +547,7 @@
                                 width: 0%;
                             }
                             100%{
-                                width: 95%;
+                                width: 80%;
                             }
                         }
                         #twoMainSkillsPercentsDivBigLine6{
@@ -556,7 +560,7 @@
                                 width: 0%;
                             }
                             100%{
-                                width: 60%;
+                                width: 80%;
                             }
                         }
                         #twoMainSkillsPercentsDivBigLine7{
@@ -565,6 +569,19 @@
                             background-color: $orange;
                         }
                         @keyframes loading7 {
+                            0%{
+                                width: 0%;
+                            }
+                            100%{
+                                width: 95%;
+                            }
+                        }
+                        #twoMainSkillsPercentsDivBigLine8{
+                            height: 100%;
+                            border-radius: 3px;
+                            background-color: $orange;
+                        }
+                        @keyframes loading8 {
                             0%{
                                 width: 0%;
                             }
@@ -750,13 +767,13 @@
                 margin: 7.5px 0px;
             }
             #threeMainPortfolioBig:nth-child(5){
-                background: url(IMG/todolist.png);
+                background: url(IMG/infinite.png);
                 background-position: center;
                 background-size: cover;
                 margin: 7.5px 0px;
             }
             #threeMainPortfolioSmall:nth-child(2){
-                background: url(IMG/akal.png);
+                background: url(IMG/shop.png);
                 background-position: center;
                 background-size: cover;
                 margin: 7.5px 0px;
@@ -768,7 +785,7 @@
                 margin: 7.5px 0px;
             }
             #threeMainPortfolioSmall:nth-child(6){
-                background: url(IMG/registr.png);
+                background: url(IMG/creativ.jpg);
                 background-position: center;
                 background-size: cover;
                 margin: 7.5px 0px;

@@ -40,6 +40,7 @@ let lineFour = document.querySelector("#twoMainSkillsPercentsDivBigLine4");
 let lineFive = document.querySelector("#twoMainSkillsPercentsDivBigLine5");
 let lineSix = document.querySelector("#twoMainSkillsPercentsDivBigLine6");
 let lineSeven = document.querySelector("#twoMainSkillsPercentsDivBigLine7");
+let lineEight = document.querySelector("#twoMainSkillsPercentsDivBigLine8");
 window.addEventListener("scroll", ()=>{
     if (window.scrollY > 710){
         skills.forEach(item =>{
@@ -52,6 +53,7 @@ window.addEventListener("scroll", ()=>{
         lineFive.style.animation = "loading5 2s forwards cubic-bezier(0, 0, 0, 0)";
         lineSix.style.animation = "loading6 2s forwards cubic-bezier(0, 0, 0, 0)";
         lineSeven.style.animation = "loading7 2s forwards cubic-bezier(0, 0, 0, 0)";
+        lineEight.style.animation = "loading8 2s forwards cubic-bezier(0, 0, 0, 0)";
     }
     if (window.scrollY < 790){
         about.removeAttribute("class");
@@ -213,7 +215,7 @@ tetrisGame.addEventListener("click", ()=>{
     window.open('https://github.com/surhokhanyan/Windows11-Tetris/tree/main/Tetris', '_blank');
 });
 akal.addEventListener("click", ()=>{
-    window.open('https://www.akal.am/', '_blank');
+    window.open('https://github.com/surhokhanyan/golds-shop', '_blank');
 });
 ticGame.addEventListener("click", ()=>{
     window.open('https://github.com/surhokhanyan/tic-tac-toe-js-dom', '_blank');
@@ -222,8 +224,8 @@ windows.addEventListener("click", ()=>{
     window.open('https://github.com/surhokhanyan/Windows11-Tetris', '_blank');
 });
 todo.addEventListener("click", ()=>{
-    window.open('https://github.com/surhokhanyan/Todo-list-wtih-deadline', '_blank');
+    window.open('https://github.com/surhokhanyan/infinite-nested-menu-drag-and-drop', '_blank');
 });
 registr.addEventListener("click", ()=>{
-    window.open('https://github.com/surhokhanyan/RegEx', '_blank');
+    window.open('https://creativelab.am/home', '_blank');
 })
